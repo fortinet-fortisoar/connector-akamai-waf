@@ -6,7 +6,6 @@ Akamai Web Application Firewall (WAF) is a cloud-based security solution designe
 
 Connector Version: 1.0.0
 
-FortiSOAR&trade; Version Tested on: 7.4.1-3167
 
 Authored By: Fortinet
 
