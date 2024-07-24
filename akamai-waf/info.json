@@ -1,0 +1,848 @@
+{
+  "name": "akamai-waf",
+  "label": "Akamai WAF",
+  "version": "1.0.0",
+  "description": "Akamai Web Application Firewall (WAF) is a cloud-based security solution designed to protect web applications from various cyber threats. It acts as a shield between internet traffic and web servers, inspecting incoming requests to detect and block malicious activities",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "category": "Firewall and Network Protection",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "contributor": "",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-akamai-waf/blob/release/1.0.0/docs/AkamaiWAF.md",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Host URL",
+        "type": "text",
+        "name": "host",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the Host URL that you have generated via Akamai WAF Identity and Access Management. It can be found in your .edgerc file",
+        "description": "Specify the Host URL that you have generated via Akamai WAF Identity and Access Management. It can be found in your .edgerc file"
+      },
+      {
+        "title": "Access Token",
+        "type": "password",
+        "name": "access_token",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the Access Token that you have generated via Akamai WAF Identity and Access Management. It can be found in your .edgerc file",
+        "description": "Specify the Access Token that you have generated via Akamai WAF Identity and Access Management. It can be found in your .edgerc file"
+      },
+      {
+        "title": "Client Token",
+        "type": "password",
+        "name": "client_token",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the Client Token that you have generated via Akamai WAF Identity and Access Management. It can be found in your .edgerc file",
+        "description": "Specify the Client Token that you have generated via Akamai WAF Identity and Access Management. It can be found in your .edgerc file"
+      },
+      {
+        "title": "Client Secret",
+        "type": "password",
+        "name": "client_secret",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the Client Secret that you have generated via Akamai WAF Identity and Access Management. It can be found in your .edgerc file",
+        "description": "Specify the Client Secret that you have generated via Akamai WAF Identity and Access Management. It can be found in your .edgerc file"
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not.By default, this option is set as True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not.By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "create_network_list",
+      "title": "Create Network List",
+      "description": "Creates a new Network list on behalf of an authenticated user based on the parameters provided",
+      "category": "investigation",
+      "annotation": "create_network_list",
+      "enabled": true,
+      "output_schema": {
+        "shared": "",
+        "name": "",
+        "uniqueId": "",
+        "syncPoint": "",
+        "type": "",
+        "networkListType": "",
+        "contractId": "",
+        "elementCount": "",
+        "groupId": "",
+        "readOnly": "",
+        "list": [],
+        "links": {
+          "activateInProduction": {
+            "href": "",
+            "method": ""
+          },
+          "activateInStaging": {
+            "href": "",
+            "method": ""
+          },
+          "appendItems": {
+            "href": "",
+            "method": ""
+          },
+          "retrieve": {
+            "href": ""
+          },
+          "statusInProduction": {
+            "href": ""
+          },
+          "statusInStaging": {
+            "href": ""
+          },
+          "update": {
+            "href": "",
+            "method": ""
+          }
+        }
+      },
+      "parameters": [
+        {
+          "title": "Name",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "name",
+          "description": "Specify the Display name of the network list",
+          "tooltip": "Specify the Display name of the network list"
+        },
+        {
+          "title": "Type",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "type",
+          "options": [
+            "IP",
+            "GEO"
+          ],
+          "description": "Specify the Network list type, either IP for IP addresses and CIDR blocks, or GEO for two-letter country codes",
+          "tooltip": "Specify the Network list type, either IP for IP addresses and CIDR blocks, or GEO for two-letter country codes"
+        },
+        {
+          "title": "List of Elements",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "list",
+          "description": "Specify the Elements (in a comma separated manner) to be added to the Network List",
+          "tooltip": "Specify the Elements (in a comma separated manner) to be added to the Network List"
+        },
+        {
+          "title": "Description",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "description",
+          "description": "Specify the detailed Description of the Network List",
+          "tooltip": "Specify the detailed Description of the Network List"
+        },
+        {
+          "title": "Contract ID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "contractId",
+          "description": "Specify the Contract ID where you want to create the list",
+          "tooltip": "Specify the Contract ID where you want to create the list"
+        },
+        {
+          "title": "Group ID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "groupId",
+          "description": "Specify the Group ID where you want to create the list",
+          "tooltip": "Specify the Group ID where you want to create the list"
+        }
+      ]
+    },
+    {
+      "operation": "get_network_list",
+      "title": "Get Network List",
+      "description": "Retrieves all network lists available for an authenticated user based on the parameters provided",
+      "category": "investigation",
+      "annotation": "get_network_list",
+      "enabled": true,
+      "output_schema": {
+        "links": {
+          "create": {
+            "href": "",
+            "method": ""
+          }
+        },
+        "networkLists": [
+          {
+            "networkListType": "",
+            "accessControlGroup": "",
+            "name": "",
+            "elementCount": "",
+            "readOnly": "",
+            "shared": "",
+            "syncPoint": "",
+            "type": "",
+            "uniqueId": "",
+            "links": {
+              "activateInProduction": {
+                "href": "",
+                "method": ""
+              },
+              "activateInStaging": {
+                "href": "",
+                "method": ""
+              },
+              "appendItems": {
+                "href": "",
+                "method": ""
+              },
+              "retrieve": {
+                "href": ""
+              },
+              "statusInProduction": {
+                "href": ""
+              },
+              "statusInStaging": {
+                "href": ""
+              },
+              "update": {
+                "href": "",
+                "method": ""
+              }
+            }
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Search",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "search",
+          "description": "Specify the List items to search in response list, Only list items that matches the specified substring in any network list's will be returned",
+          "tooltip": "Specify the List items to search in response list, Only list items that matches the specified substring in any network list's will be returned"
+        },
+        {
+          "title": "List Type",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "listType",
+          "options": [
+            "IP",
+            "GEO"
+          ],
+          "description": "Specify the list type with which you want to filter results. Filters the output to lists of only the given type of network lists if provided, either IP or GEO",
+          "tooltip": "Specify the list type with which you want to filter results. Filters the output to lists of only the given type of network lists if provided, either IP or GEO"
+        },
+        {
+          "title": "Extended",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false,
+          "type": "checkbox",
+          "name": "extended",
+          "description": "If enabled, provides additional response data identifying who created and updated the list and when, and the network list's deployment status in both STAGING and PRODUCTION environments. This data takes longer to provide.",
+          "tooltip": "If enabled, provides additional response data identifying who created and updated the list and when, and the network list's deployment status in both STAGING and PRODUCTION environments. This data takes longer to provide."
+        },
+        {
+          "title": "Include Elements",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false,
+          "type": "checkbox",
+          "name": "includeElements",
+          "description": "If enabled, the response list includes all items. For large network lists, this may slow responses and yield large response objects",
+          "tooltip": "If enabled, the response list includes all items. For large network lists, this may slow responses and yield large response objects"
+        }
+      ]
+    },
+    {
+      "operation": "get_network_by_id",
+      "title": "Get Network by ID",
+      "description": "Retrieves details of the Network lists based on the Network List ID and other parameters provided",
+      "category": "investigation",
+      "annotation": "get_network_by_id",
+      "enabled": true,
+      "output_schema": {
+        "shared": "",
+        "name": "",
+        "uniqueId": "",
+        "syncPoint": "",
+        "type": "",
+        "networkListType": "",
+        "contractId": "",
+        "elementCount": "",
+        "groupId": "",
+        "readOnly": "",
+        "list": [],
+        "links": {
+          "activateInProduction": {
+            "href": "",
+            "method": ""
+          },
+          "activateInStaging": {
+            "href": "",
+            "method": ""
+          },
+          "appendItems": {
+            "href": "",
+            "method": ""
+          },
+          "retrieve": {
+            "href": ""
+          },
+          "statusInProduction": {
+            "href": ""
+          },
+          "statusInStaging": {
+            "href": ""
+          },
+          "update": {
+            "href": "",
+            "method": ""
+          }
+        }
+      },
+      "parameters": [
+        {
+          "title": "Network List ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "networkListId",
+          "description": "Specify the ID of Network List which you want to retrieve",
+          "tooltip": "Specify the ID of Network List which you want to retrieve"
+        },
+        {
+          "title": "Extended",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false,
+          "type": "checkbox",
+          "name": "extended",
+          "description": "If enabled, provides additional response data identifying who created and updated the list and when, and the network list's deployment status in both STAGING and PRODUCTION environments. This data takes longer to provide.",
+          "tooltip": "If enabled, provides additional response data identifying who created and updated the list and when, and the network list's deployment status in both STAGING and PRODUCTION environments. This data takes longer to provide."
+        },
+        {
+          "title": "Include Elements",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false,
+          "type": "checkbox",
+          "name": "includeElements",
+          "description": "If enabled, the response list includes all items. For large network lists, this may slow responses and yield large response objects",
+          "tooltip": "If enabled, the response list includes all items. For large network lists, this may slow responses and yield large response objects"
+        }
+      ]
+    },
+    {
+      "operation": "update_network_list",
+      "title": "Update Network List",
+      "description": "Update details of the Network lists based on the Network List ID and other parameters provided",
+      "category": "investigation",
+      "annotation": "update_network_list",
+      "enabled": true,
+      "output_schema": {
+        "shared": "",
+        "name": "",
+        "uniqueId": "",
+        "syncPoint": "",
+        "type": "",
+        "networkListType": "",
+        "contractId": "",
+        "elementCount": "",
+        "groupId": "",
+        "readOnly": "",
+        "list": [],
+        "links": {
+          "activateInProduction": {
+            "href": "",
+            "method": ""
+          },
+          "activateInStaging": {
+            "href": "",
+            "method": ""
+          },
+          "appendItems": {
+            "href": "",
+            "method": ""
+          },
+          "retrieve": {
+            "href": ""
+          },
+          "statusInProduction": {
+            "href": ""
+          },
+          "statusInStaging": {
+            "href": ""
+          },
+          "update": {
+            "href": "",
+            "method": ""
+          }
+        }
+      },
+      "parameters": [
+        {
+          "title": "Network List ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "networkListId",
+          "description": "Specify the ID of Network List which you want to retrieve",
+          "tooltip": "Specify the ID of Network List which you want to retrieve"
+        },
+        {
+          "title": "Name",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "name",
+          "description": "Specify the Display name of the network list",
+          "tooltip": "Specify the Display name of the network list"
+        },
+        {
+          "title": "Type",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "type",
+          "options": [
+            "IP",
+            "GEO"
+          ],
+          "description": "Specify the Network list type, either IP for IP addresses and CIDR blocks, or GEO for two-letter country codes",
+          "tooltip": "Specify the Network list type, either IP for IP addresses and CIDR blocks, or GEO for two-letter country codes"
+        },
+        {
+          "title": "List of Elements",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "list",
+          "description": "Specify the Elements (in a comma separated manner) to be updated in the Network List",
+          "tooltip": "Specify the Elements (in a comma separated manner) to be updated in the Network List"
+        },
+        {
+          "title": "Sync Point",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "syncPoint",
+          "description": "Specify the Sync Point of the Network List. Sync Point identifies each version of the network list, which increments each time it's modified. You need to include this value in any requests to modify the list",
+          "tooltip": "Specify the Sync Point of the Network List. Sync Point identifies each version of the network list, which increments each time it's modified. You need to include this value in any requests to modify the list"
+        },
+        {
+          "title": "Description",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "description",
+          "description": "Specify the detailed Description of the Network List",
+          "tooltip": "Specify the detailed Description of the Network List"
+        },
+        {
+          "title": "Extended",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false,
+          "type": "checkbox",
+          "name": "extended",
+          "description": "If enabled, provides additional response data identifying who created and updated the list and when, and the network list's deployment status in both STAGING and PRODUCTION environments. This data takes longer to provide.",
+          "tooltip": "If enabled, provides additional response data identifying who created and updated the list and when, and the network list's deployment status in both STAGING and PRODUCTION environments. This data takes longer to provide."
+        },
+        {
+          "title": "Include Elements",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false,
+          "type": "checkbox",
+          "name": "includeElements",
+          "description": "If enabled, the response list includes all items. For large network lists, this may slow responses and yield large response objects",
+          "tooltip": "If enabled, the response list includes all items. For large network lists, this may slow responses and yield large response objects"
+        }
+      ]
+    },
+    {
+      "operation": "delete_network_by_id",
+      "title": "Delete Network by ID",
+      "description": "Deletes a Network list based on the Network List ID and other parameters provided",
+      "category": "investigation",
+      "annotation": "delete_network_by_id",
+      "enabled": true,
+      "output_schema": {
+        "status": "",
+        "uniqueId": "",
+        "syncPoint": ""
+      },
+      "parameters": [
+        {
+          "title": "Network List ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "networkListId",
+          "description": "Specify the ID of Network List which you want to retrieve",
+          "tooltip": "Specify the ID of Network List which you want to retrieve"
+        }
+      ]
+    },
+    {
+      "operation": "append_elements_to_network_list",
+      "title": "Append Elements to Network List",
+      "description": "Appends a set of elements to a Network list based on the Network List ID and other parameters provided",
+      "category": "investigation",
+      "annotation": "append_elements_to_network_list",
+      "enabled": true,
+      "output_schema": {
+        "shared": "",
+        "name": "",
+        "uniqueId": "",
+        "syncPoint": "",
+        "type": "",
+        "networkListType": "",
+        "contractId": "",
+        "elementCount": "",
+        "groupId": "",
+        "readOnly": "",
+        "list": [],
+        "links": {
+          "activateInProduction": {
+            "href": "",
+            "method": ""
+          },
+          "activateInStaging": {
+            "href": "",
+            "method": ""
+          },
+          "appendItems": {
+            "href": "",
+            "method": ""
+          },
+          "retrieve": {
+            "href": ""
+          },
+          "statusInProduction": {
+            "href": ""
+          },
+          "statusInStaging": {
+            "href": ""
+          },
+          "update": {
+            "href": "",
+            "method": ""
+          }
+        }
+      },
+      "parameters": [
+        {
+          "title": "Network List ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "networkListId",
+          "description": "Specify the ID of Network List which you want to retrieve",
+          "tooltip": "Specify the ID of Network List which you want to retrieve"
+        },
+        {
+          "title": "List of Elements",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "list",
+          "description": "Specify the Elements (in a comma separated manner) to be added in the Network List",
+          "tooltip": "Specify the Elements (in a comma separated manner) to be added in the Network List"
+        }
+      ]
+    },
+    {
+      "operation": "delete_element_from_network_list",
+      "title": "Delete an Element from Network List",
+      "description": "Deletes an element from a Network list based on the Network List ID, Element and other parameters provided",
+      "category": "investigation",
+      "annotation": "delete_element_from_network_list",
+      "enabled": true,
+      "output_schema": {
+        "shared": "",
+        "name": "",
+        "uniqueId": "",
+        "syncPoint": "",
+        "type": "",
+        "networkListType": "",
+        "contractId": "",
+        "elementCount": "",
+        "groupId": "",
+        "readOnly": "",
+        "list": [],
+        "links": {
+          "activateInProduction": {
+            "href": "",
+            "method": ""
+          },
+          "activateInStaging": {
+            "href": "",
+            "method": ""
+          },
+          "appendItems": {
+            "href": "",
+            "method": ""
+          },
+          "retrieve": {
+            "href": ""
+          },
+          "statusInProduction": {
+            "href": ""
+          },
+          "statusInStaging": {
+            "href": ""
+          },
+          "update": {
+            "href": "",
+            "method": ""
+          }
+        }
+      },
+      "parameters": [
+        {
+          "title": "Network List ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "networkListId",
+          "description": "Specify the ID of Network List which you want to retrieve",
+          "tooltip": "Specify the ID of Network List which you want to retrieve"
+        },
+        {
+          "title": "Element Value",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "element",
+          "description": "Specify the Elements to be deleted from the Network List",
+          "tooltip": "Specify the Elements to be deleted from the Network List"
+        }
+      ]
+    },
+    {
+      "operation": "activate_network_list",
+      "title": "Activate Network List",
+      "description": "Activates the most recent syncPoint version of a network list in either the STAGING or PRODUCTION environment.",
+      "category": "investigation",
+      "annotation": "activate_network_list",
+      "enabled": true,
+      "output_schema": {
+        "activationId": "",
+        "activationComments": "",
+        "activationStatus": "",
+        "syncPoint": "",
+        "uniqueId": "",
+        "fast": "",
+        "dispatchCount": "",
+        "links": {
+          "appendItems": {
+            "href": "",
+            "method": ""
+          },
+          "retrieve": {
+            "href": ""
+          },
+          "statusInProduction": {
+            "href": ""
+          },
+          "statusInStaging": {
+            "href": ""
+          },
+          "syncPointHistory": {
+            "href": ""
+          },
+          "update": {
+            "href": "",
+            "method": ""
+          },
+          "activationDetails": {
+            "href": ""
+          }
+        }
+      },
+      "parameters": [
+        {
+          "title": "Network List ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "networkListId",
+          "description": "Specify the ID of Network List which you want to retrieve",
+          "tooltip": "Specify the ID of Network List which you want to retrieve"
+        },
+        {
+          "title": "Environment",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "environment",
+          "options": [
+            "STAGING",
+            "PRODUCTION"
+          ],
+          "description": "Specify the Akamai network on which this list is activated: STAGING or PRODUCTION",
+          "tooltip": "Specify the Akamai network on which this list is activated: STAGING or PRODUCTION"
+        },
+        {
+          "title": "Element Value",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "element",
+          "description": "Specify the Elements to be deleted from the Network List",
+          "tooltip": "Specify the Elements to be deleted from the Network List"
+        },
+        {
+          "title": "Comment",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "comments",
+          "description": "Specify the descriptive text to accompany the activation. This is reflected in the activation object's activationComments member",
+          "tooltip": "Specify the descriptive text to accompany the activation. This is reflected in the activation object's activationComments member"
+        },
+        {
+          "title": "Notify Recipients",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "notificationRecipients",
+          "description": "Specify the List of email addresses of Control Center users who receive an email when activation of this list is complete. Don't add addresses to this list without the recipients' consent",
+          "tooltip": "Specify the List of email addresses of Control Center users who receive an email when activation of this list is complete. Don't add addresses to this list without the recipients' consent"
+        },
+        {
+          "title": "Siebel Ticket ID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "siebelTicketId",
+          "description": "Specify the Siebel Ticket ID, If the activation is linked to a Siebel ticket, this identifies the ticket",
+          "tooltip": "Specify the Siebel Ticket ID, If the activation is linked to a Siebel ticket, this identifies the ticket"
+        }
+      ]
+    },
+    {
+      "operation": "get_activation_status_of_network_list",
+      "title": "Get Activation Status of Network List",
+      "description": "Shows a Network list's activation status on either the STAGING or PRODUCTION environment",
+      "category": "investigation",
+      "annotation": "get_activation_status_of_network_list",
+      "enabled": true,
+      "output_schema": {
+        "activationId": "",
+        "activationComments": "",
+        "activationStatus": "",
+        "syncPoint": "",
+        "uniqueId": "",
+        "fast": "",
+        "dispatchCount": "",
+        "links": {
+          "appendItems": {
+            "href": "",
+            "method": ""
+          },
+          "retrieve": {
+            "href": ""
+          },
+          "statusInProduction": {
+            "href": ""
+          },
+          "statusInStaging": {
+            "href": ""
+          },
+          "syncPointHistory": {
+            "href": ""
+          },
+          "update": {
+            "href": "",
+            "method": ""
+          },
+          "activationDetails": {
+            "href": ""
+          }
+        }
+      },
+      "parameters": [
+        {
+          "title": "Network List ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "networkListId",
+          "description": "Specify the ID of Network List whose activation status you want to retrieve",
+          "tooltip": "Specify the ID of Network List whose activation status you want to retrieve"
+        },
+        {
+          "title": "Environment",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "environment",
+          "options": [
+            "STAGING",
+            "PRODUCTION"
+          ],
+          "description": "Specify the Akamai network on which this list is activated: STAGING or PRODUCTION",
+          "tooltip": "Specify the Akamai network on which this list is activated: STAGING or PRODUCTION"
+        }
+      ]
+    }
+  ]
+}
