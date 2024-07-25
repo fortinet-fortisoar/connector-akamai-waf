@@ -1,0 +1,673 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "ccd6cbe8-fca2-4f13-b3b8-7af2862473c5",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "7013b9af-3d87-41c3-8796-48e1f612a590",
+          "collection": "/api/3/workflow_collections/ccd6cbe8-fca2-4f13-b3b8-7af2862473c5",
+          "steps": [
+            {
+              "uuid": "79fe6483-4917-444d-9d2d-e28ee0f3b0f6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "6a38c2b0-66af-4daa-8b9b-401810e67c17",
+              "@type": "WorkflowStep",
+              "name": "Create Network List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Akamai WAF",
+                "config": "",
+                "params": {
+                  "name": "",
+                  "type": "",
+                  "list": "",
+                  "description": "",
+                  "contractId": "",
+                  "groupId": ""
+                },
+                "version": "1.0.0",
+                "connector": "akamai-waf",
+                "operation": "create_network_list",
+                "operationTitle": "Create Network List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Creates a new Network list on behalf of an authenticated user based on the parameters provided",
+          "name": "Create Network List",
+          "tag": "#Akamai WAF",
+          "recordTags": [
+            "Akamai",
+            "akamai-waf"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/79fe6483-4917-444d-9d2d-e28ee0f3b0f6",
+          "routes": [
+            {
+              "uuid": "080f1633-c78a-4123-96fa-df4161df0094",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Network List",
+              "sourceStep": "/api/3/workflow_steps/79fe6483-4917-444d-9d2d-e28ee0f3b0f6",
+              "targetStep": "/api/3/workflow_steps/6a38c2b0-66af-4daa-8b9b-401810e67c17"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "389b25ac-b065-4335-914a-824c48fd8f45",
+          "collection": "/api/3/workflow_collections/ccd6cbe8-fca2-4f13-b3b8-7af2862473c5",
+          "steps": [
+            {
+              "uuid": "072dcf04-e198-4289-b56e-3ff88a82a52a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "4ac1b3f2-1a5c-4f7f-9e2e-6fd251c4b35b",
+              "@type": "WorkflowStep",
+              "name": "Get Network List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Akamai WAF",
+                "config": "",
+                "params": {
+                  "search": "",
+                  "listType": "",
+                  "extended": "",
+                  "includeElements": ""
+                },
+                "version": "1.0.0",
+                "connector": "akamai-waf",
+                "operation": "get_network_list",
+                "operationTitle": "Get Network List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves all network lists available for an authenticated user based on the parameters provided",
+          "name": "Get Network List",
+          "tag": "#Akamai WAF",
+          "recordTags": [
+            "Akamai",
+            "akamai-waf"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/072dcf04-e198-4289-b56e-3ff88a82a52a",
+          "routes": [
+            {
+              "uuid": "cdf7c798-cc8b-4142-a7b6-9349e2ff3804",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Network List",
+              "sourceStep": "/api/3/workflow_steps/072dcf04-e198-4289-b56e-3ff88a82a52a",
+              "targetStep": "/api/3/workflow_steps/4ac1b3f2-1a5c-4f7f-9e2e-6fd251c4b35b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "c2516f22-5d02-45a7-b46d-90f2132c615b",
+          "collection": "/api/3/workflow_collections/ccd6cbe8-fca2-4f13-b3b8-7af2862473c5",
+          "steps": [
+            {
+              "uuid": "3d247dd7-e317-4893-9407-97a44c8b554d",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "feb1602c-c6e1-4d7d-b3e9-18b6b935b4b4",
+              "@type": "WorkflowStep",
+              "name": "Get Network by ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Akamai WAF",
+                "config": "",
+                "params": {
+                  "networkListId": "",
+                  "extended": "",
+                  "includeElements": ""
+                },
+                "version": "1.0.0",
+                "connector": "akamai-waf",
+                "operation": "get_network_by_id",
+                "operationTitle": "Get Network by ID"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves details of the Network lists based on the Network List ID and other parameters provided",
+          "name": "Get Network by ID",
+          "tag": "#Akamai WAF",
+          "recordTags": [
+            "Akamai",
+            "akamai-waf"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3d247dd7-e317-4893-9407-97a44c8b554d",
+          "routes": [
+            {
+              "uuid": "bf6153f6-4f51-4d9b-985b-cf8bcdf28962",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Network by ID",
+              "sourceStep": "/api/3/workflow_steps/3d247dd7-e317-4893-9407-97a44c8b554d",
+              "targetStep": "/api/3/workflow_steps/feb1602c-c6e1-4d7d-b3e9-18b6b935b4b4"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "cfd1eced-5d90-4429-ab43-796eaca2de00",
+          "collection": "/api/3/workflow_collections/ccd6cbe8-fca2-4f13-b3b8-7af2862473c5",
+          "steps": [
+            {
+              "uuid": "943a608d-0fd4-4be1-b885-a37a1d3e8bce",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "949c2bdf-f03e-4815-9118-f4e7b6e209d1",
+              "@type": "WorkflowStep",
+              "name": "Update Network List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Akamai WAF",
+                "config": "",
+                "params": {
+                  "networkListId": "",
+                  "name": "",
+                  "type": "",
+                  "list": "",
+                  "syncPoint": "",
+                  "description": "",
+                  "extended": "",
+                  "includeElements": ""
+                },
+                "version": "1.0.0",
+                "connector": "akamai-waf",
+                "operation": "update_network_list",
+                "operationTitle": "Update Network List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Update details of the Network lists based on the Network List ID and other parameters provided",
+          "name": "Update Network List",
+          "tag": "#Akamai WAF",
+          "recordTags": [
+            "Akamai",
+            "akamai-waf"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/943a608d-0fd4-4be1-b885-a37a1d3e8bce",
+          "routes": [
+            {
+              "uuid": "9df89245-dc5c-4444-a1fc-ca68bcc821c9",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Network List",
+              "sourceStep": "/api/3/workflow_steps/943a608d-0fd4-4be1-b885-a37a1d3e8bce",
+              "targetStep": "/api/3/workflow_steps/949c2bdf-f03e-4815-9118-f4e7b6e209d1"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "57ac7a3b-3489-4994-b9d3-a4a804ab58a6",
+          "collection": "/api/3/workflow_collections/ccd6cbe8-fca2-4f13-b3b8-7af2862473c5",
+          "steps": [
+            {
+              "uuid": "5fdbbdb8-9dd3-4d89-b12b-d00524f345c1",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "e8fa2989-0d1f-423c-aea8-45c25cc957f2",
+              "@type": "WorkflowStep",
+              "name": "Delete Network by ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Akamai WAF",
+                "config": "",
+                "params": {
+                  "networkListId": ""
+                },
+                "version": "1.0.0",
+                "connector": "akamai-waf",
+                "operation": "delete_network_by_id",
+                "operationTitle": "Delete Network by ID"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Deletes a Network list based on the Network List ID and other parameters provided",
+          "name": "Delete Network by ID",
+          "tag": "#Akamai WAF",
+          "recordTags": [
+            "Akamai",
+            "akamai-waf"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/5fdbbdb8-9dd3-4d89-b12b-d00524f345c1",
+          "routes": [
+            {
+              "uuid": "6c1b5994-3e4e-4285-b7ee-fbf0ed138175",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Network by ID",
+              "sourceStep": "/api/3/workflow_steps/5fdbbdb8-9dd3-4d89-b12b-d00524f345c1",
+              "targetStep": "/api/3/workflow_steps/e8fa2989-0d1f-423c-aea8-45c25cc957f2"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "5ddd3a6b-4a81-42ab-bf26-49c1a303c8a6",
+          "collection": "/api/3/workflow_collections/ccd6cbe8-fca2-4f13-b3b8-7af2862473c5",
+          "steps": [
+            {
+              "uuid": "0131c113-52aa-4b19-a832-e5aeaa726233",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "9a491cde-d741-4ae6-833d-a8bf8a5d7a5d",
+              "@type": "WorkflowStep",
+              "name": "Append Elements to Network List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Akamai WAF",
+                "config": "",
+                "params": {
+                  "networkListId": "",
+                  "list": ""
+                },
+                "version": "1.0.0",
+                "connector": "akamai-waf",
+                "operation": "append_elements_to_network_list",
+                "operationTitle": "Append Elements to Network List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Appends a set of elements to a Network list based on the Network List ID and other parameters provided",
+          "name": "Append Elements to Network List",
+          "tag": "#Akamai WAF",
+          "recordTags": [
+            "Akamai",
+            "akamai-waf"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0131c113-52aa-4b19-a832-e5aeaa726233",
+          "routes": [
+            {
+              "uuid": "6e78d735-424b-4585-95ec-a4db951cdd58",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Append Elements to Network List",
+              "sourceStep": "/api/3/workflow_steps/0131c113-52aa-4b19-a832-e5aeaa726233",
+              "targetStep": "/api/3/workflow_steps/9a491cde-d741-4ae6-833d-a8bf8a5d7a5d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f3cf4bf3-b37a-4961-9149-b5583bce8cce",
+          "collection": "/api/3/workflow_collections/ccd6cbe8-fca2-4f13-b3b8-7af2862473c5",
+          "steps": [
+            {
+              "uuid": "3a450e7b-bfa7-4f94-8d90-5e848ab5d178",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "f3fe5a55-32d4-4b91-bc99-afed8e39f28c",
+              "@type": "WorkflowStep",
+              "name": "Delete an Element from Network List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Akamai WAF",
+                "config": "",
+                "params": {
+                  "networkListId": "",
+                  "element": ""
+                },
+                "version": "1.0.0",
+                "connector": "akamai-waf",
+                "operation": "delete_element_from_network_list",
+                "operationTitle": "Delete an Element from Network List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Deletes an element from a Network list based on the Network List ID, Element and other parameters provided",
+          "name": "Delete an Element from Network List",
+          "tag": "#Akamai WAF",
+          "recordTags": [
+            "Akamai",
+            "akamai-waf"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3a450e7b-bfa7-4f94-8d90-5e848ab5d178",
+          "routes": [
+            {
+              "uuid": "da420375-f896-4356-bd69-0365331ee480",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete an Element from Network List",
+              "sourceStep": "/api/3/workflow_steps/3a450e7b-bfa7-4f94-8d90-5e848ab5d178",
+              "targetStep": "/api/3/workflow_steps/f3fe5a55-32d4-4b91-bc99-afed8e39f28c"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "800fe2da-d944-48da-a299-e04dfa773559",
+          "collection": "/api/3/workflow_collections/ccd6cbe8-fca2-4f13-b3b8-7af2862473c5",
+          "steps": [
+            {
+              "uuid": "8c5ecb78-21bf-4c9d-a4e6-2bd1c4336906",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "3ebc85fd-cd56-44bb-a8c2-794a7e6cf665",
+              "@type": "WorkflowStep",
+              "name": "Activate Network List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Akamai WAF",
+                "config": "",
+                "params": {
+                  "networkListId": "",
+                  "environment": "",
+                  "element": "",
+                  "comments": "",
+                  "notificationRecipients": "",
+                  "siebelTicketId": ""
+                },
+                "version": "1.0.0",
+                "connector": "akamai-waf",
+                "operation": "activate_network_list",
+                "operationTitle": "Activate Network List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Activates the most recent syncPoint version of a network list in either the STAGING or PRODUCTION environment.",
+          "name": "Activate Network List",
+          "tag": "#Akamai WAF",
+          "recordTags": [
+            "Akamai",
+            "akamai-waf"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/8c5ecb78-21bf-4c9d-a4e6-2bd1c4336906",
+          "routes": [
+            {
+              "uuid": "eec5d9c8-48af-4726-af4d-7be85b4feb96",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Activate Network List",
+              "sourceStep": "/api/3/workflow_steps/8c5ecb78-21bf-4c9d-a4e6-2bd1c4336906",
+              "targetStep": "/api/3/workflow_steps/3ebc85fd-cd56-44bb-a8c2-794a7e6cf665"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "a5e57980-f284-4a52-a2f0-51eccc1b3e67",
+          "collection": "/api/3/workflow_collections/ccd6cbe8-fca2-4f13-b3b8-7af2862473c5",
+          "steps": [
+            {
+              "uuid": "4f15c7df-a9d2-4a93-a27b-28aee351bce7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "cad13dc2-dea4-4135-8047-42f99d7ff358",
+              "@type": "WorkflowStep",
+              "name": "Get Activation Status of Network List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Akamai WAF",
+                "config": "",
+                "params": {
+                  "networkListId": "",
+                  "environment": ""
+                },
+                "version": "1.0.0",
+                "connector": "akamai-waf",
+                "operation": "get_activation_status_of_network_list",
+                "operationTitle": "Get Activation Status of Network List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Shows a Network list's activation status on either the STAGING or PRODUCTION environment",
+          "name": "Get Activation Status of Network List",
+          "tag": "#Akamai WAF",
+          "recordTags": [
+            "Akamai",
+            "akamai-waf"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4f15c7df-a9d2-4a93-a27b-28aee351bce7",
+          "routes": [
+            {
+              "uuid": "b7a2c415-6c77-4e96-bbaf-5c57d1f34972",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Activation Status of Network List",
+              "sourceStep": "/api/3/workflow_steps/4f15c7df-a9d2-4a93-a27b-28aee351bce7",
+              "targetStep": "/api/3/workflow_steps/cad13dc2-dea4-4135-8047-42f99d7ff358"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - Akamai WAF - 1.0.0",
+      "description": "Akamai Web Application Firewall (WAF) is a cloud-based security solution designed to protect web applications from various cyber threats. It acts as a shield between internet traffic and web servers, inspecting incoming requests to detect and block malicious activities",
+      "visible": true,
+      "recordTags": [
+        "Akamai",
+        "akamai-waf"
+      ]
+    }
+  ]
+}
