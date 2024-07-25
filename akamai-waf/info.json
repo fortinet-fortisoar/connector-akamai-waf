@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Akamai Web Application Firewall (WAF) is a cloud-based security solution designed to protect web applications from various cyber threats. It acts as a shield between internet traffic and web servers, inspecting incoming requests to detect and block malicious activities",
   "publisher": "Fortinet",
-  "cs_approved": true,
+  "cs_approved": false,
   "cs_compatible": true,
   "category": "Firewall and Network Protection",
   "icon_small_name": "small.png",

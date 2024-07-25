@@ -1,1 +1,1 @@
-edgegrid-python
+edgegrid-python>=1.3.1

@@ -10,7 +10,7 @@ import requests
 from akamai.edgegrid import EdgeGridAuth
 from connectors.core.connector import get_logger, ConnectorError
 
-logger = get_logger('akamai-waf_1_0_0')
+logger = get_logger('akamai-waf')
 
 
 class AkamaiWAF:
@@ -190,6 +190,8 @@ def _check_health(config):
         if response.ok:
             logger.info("Akamai WAF Connector Available")
             return True
+        else:
+            return False
     except Exception as err:
         logger.error(str(err))
         raise ConnectorError(str(err))

@@ -8,7 +8,7 @@ Copyright end
 from connectors.core.connector import Connector, get_logger, ConnectorError
 from .operations import operations, _check_health
 
-logger = get_logger('akamai-waf_1_0_0')
+logger = get_logger('akamai-waf')
 
 
 class AkamaiWAFConnector(Connector):
