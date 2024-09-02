@@ -187,7 +187,7 @@ def _check_health(config):
         aw = AkamaiWAF(config)
         endpoint = "/network-list/v2/network-lists"
         response = aw.make_request(endpoint=endpoint)
-        if response.ok:
+        if response:
             logger.info("Akamai WAF Connector Available")
             return True
         else:

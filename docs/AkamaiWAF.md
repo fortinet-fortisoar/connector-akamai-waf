@@ -4,12 +4,17 @@ Akamai Web Application Firewall (WAF) is a cloud-based security solution designe
 
 ### Version information
 
-Connector Version: 1.0.0
+Connector Version: 1.0.1
 
 
 Authored By: Fortinet
 
 Certified: No
+## Release Notes for version 1.0.1
+Following enhancements have been made to the Akamai WAF Connector in version 1.0.1:
+<ul>
+<li>Fixed the check_health function of the Connector</li>
+</ul>
 
 ## Installing the connector
 <p>Use the <strong>Content Hub</strong> to install the connector. For the detailed procedure to install a connector, click <a href="https://docs.fortinet.com/document/fortisoar/0.0.0/installing-a-connector/1/installing-a-connector" target="_top">here</a>.</p><p>You can also use the <code>yum</code> command as a root user to install the connector:</p>
@@ -477,7 +482,7 @@ The output contains the following populated JSON schema:
     }
 }</pre>
 ## Included playbooks
-The `Sample - akamai-waf - 1.0.0` playbook collection comes bundled with the Akamai WAF connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR&trade; after importing the Akamai WAF connector.
+The `Sample - akamai-waf - 1.0.1` playbook collection comes bundled with the Akamai WAF connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR&trade; after importing the Akamai WAF connector.
 
 - Activate Network List
 - Append Elements to Network List

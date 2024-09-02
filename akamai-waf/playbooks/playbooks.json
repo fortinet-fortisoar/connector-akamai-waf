@@ -44,7 +44,7 @@
                   "contractId": "",
                   "groupId": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "akamai-waf",
                 "operation": "create_network_list",
                 "operationTitle": "Create Network List"
@@ -117,7 +117,7 @@
                   "extended": "",
                   "includeElements": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "akamai-waf",
                 "operation": "get_network_list",
                 "operationTitle": "Get Network List"
@@ -189,7 +189,7 @@
                   "extended": "",
                   "includeElements": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "akamai-waf",
                 "operation": "get_network_by_id",
                 "operationTitle": "Get Network by ID"
@@ -266,7 +266,7 @@
                   "extended": "",
                   "includeElements": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "akamai-waf",
                 "operation": "update_network_list",
                 "operationTitle": "Update Network List"
@@ -336,7 +336,7 @@
                 "params": {
                   "networkListId": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "akamai-waf",
                 "operation": "delete_network_by_id",
                 "operationTitle": "Delete Network by ID"
@@ -407,7 +407,7 @@
                   "networkListId": "",
                   "list": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "akamai-waf",
                 "operation": "append_elements_to_network_list",
                 "operationTitle": "Append Elements to Network List"
@@ -478,7 +478,7 @@
                   "networkListId": "",
                   "element": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "akamai-waf",
                 "operation": "delete_element_from_network_list",
                 "operationTitle": "Delete an Element from Network List"
@@ -553,7 +553,7 @@
                   "notificationRecipients": "",
                   "siebelTicketId": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "akamai-waf",
                 "operation": "activate_network_list",
                 "operationTitle": "Activate Network List"
@@ -624,7 +624,7 @@
                   "networkListId": "",
                   "environment": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "akamai-waf",
                 "operation": "get_activation_status_of_network_list",
                 "operationTitle": "Get Activation Status of Network List"
@@ -661,7 +661,7 @@
           ]
         }
       ],
-      "name": "Sample - Akamai WAF - 1.0.0",
+      "name": "Sample - Akamai WAF - 1.0.1",
       "description": "Akamai Web Application Firewall (WAF) is a cloud-based security solution designed to protect web applications from various cyber threats. It acts as a shield between internet traffic and web servers, inspecting incoming requests to detect and block malicious activities",
       "visible": true,
       "recordTags": [
