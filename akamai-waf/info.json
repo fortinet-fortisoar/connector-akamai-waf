@@ -735,16 +735,6 @@
           "tooltip": "Specify the Akamai network on which this list is activated: STAGING or PRODUCTION"
         },
         {
-          "title": "Element Value",
-          "required": true,
-          "editable": true,
-          "visible": true,
-          "type": "text",
-          "name": "element",
-          "description": "Specify the Elements to be deleted from the Network List",
-          "tooltip": "Specify the Elements to be deleted from the Network List"
-        },
-        {
           "title": "Comment",
           "required": false,
           "editable": true,
