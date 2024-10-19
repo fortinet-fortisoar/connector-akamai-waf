@@ -4,16 +4,16 @@ Akamai Web Application Firewall (WAF) is a cloud-based security solution designe
 
 ### Version information
 
-Connector Version: 1.0.1
+Connector Version: 1.0.2
 
 
 Authored By: Fortinet
 
 Certified: No
-## Release Notes for version 1.0.1
-Following enhancements have been made to the Akamai WAF Connector in version 1.0.1:
+## Release Notes for version 1.0.2
+Following enhancements have been made to the Akamai WAF Connector in version 1.0.2:
 <ul>
-<li>Fixed the check_health function of the Connector</li>
+<li>Fixed Endpoint of 'Delete an Element from Network List' Action</li>
 </ul>
 
 ## Installing the connector
@@ -394,7 +394,6 @@ The output contains the following populated JSON schema:
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Network List ID</td><td>Specify the ID of Network List which you want to retrieve
 </td></tr><tr><td>Environment</td><td>Specify the Akamai network on which this list is activated: STAGING or PRODUCTION
-</td></tr><tr><td>Element Value</td><td>Specify the Elements to be deleted from the Network List
 </td></tr><tr><td>Comment</td><td>Specify the descriptive text to accompany the activation. This is reflected in the activation object's activationComments member
 </td></tr><tr><td>Notify Recipients</td><td>Specify the List of email addresses of Control Center users who receive an email when activation of this list is complete. Don't add addresses to this list without the recipients' consent
 </td></tr><tr><td>Siebel Ticket ID</td><td>Specify the Siebel Ticket ID, If the activation is linked to a Siebel ticket, this identifies the ticket
@@ -482,7 +481,7 @@ The output contains the following populated JSON schema:
     }
 }</pre>
 ## Included playbooks
-The `Sample - akamai-waf - 1.0.1` playbook collection comes bundled with the Akamai WAF connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR&trade; after importing the Akamai WAF connector.
+The `Sample - akamai-waf - 1.0.2` playbook collection comes bundled with the Akamai WAF connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR&trade; after importing the Akamai WAF connector.
 
 - Activate Network List
 - Append Elements to Network List
