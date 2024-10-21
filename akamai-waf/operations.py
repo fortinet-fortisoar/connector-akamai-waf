@@ -151,7 +151,7 @@ def delete_element_from_network_list(config: dict, params: dict):
         aw = AkamaiWAF(config)
         params = _build_payload(params)
 
-        endpoint = f'/network-list/v2/network-lists/{params.pop("networkListId")}/append'
+        endpoint = f'/network-list/v2/network-lists/{params.pop("networkListId")}/elements'
         return aw.make_request(endpoint=endpoint, method='DELETE', params=params)
     except Exception as err:
         logger.error(str(err))

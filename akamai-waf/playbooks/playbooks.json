@@ -548,7 +548,6 @@
                 "params": {
                   "networkListId": "",
                   "environment": "",
-                  "element": "",
                   "comments": "",
                   "notificationRecipients": "",
                   "siebelTicketId": ""
@@ -661,7 +660,7 @@
           ]
         }
       ],
-      "name": "Sample - Akamai WAF - 1.0.1",
+      "name": "Sample - Akamai WAF - 1.0.2",
       "description": "Akamai Web Application Firewall (WAF) is a cloud-based security solution designed to protect web applications from various cyber threats. It acts as a shield between internet traffic and web servers, inspecting incoming requests to detect and block malicious activities",
       "visible": true,
       "recordTags": [

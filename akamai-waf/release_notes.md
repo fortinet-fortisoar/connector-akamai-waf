@@ -1,3 +1,3 @@
 #### What's Improved
 
-- Fixed the check_health function of the Connector
+- Fixed Endpoint of 'Delete an Element from Network List' Action
